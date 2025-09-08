@@ -1,0 +1,22 @@
+// Variables para un mantenimiento más fácil
+$blanco: #ffffff;
+$azul: #354E90;
+$gris-claro: #f8f8f8;
+$gris-borde: #e0e0e0;
+$gris-oscuro-texto: #333;
+$gris-medio-texto: #777;
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    body {
+    padding: 20px;
+    }
+    .contenedor-card-servicios {
+    flex-direction: column;
+    align-items: center;
+    }
+    .card-container {
+    max-width: 90%;
+    flex-basis: auto;
+    }
+}

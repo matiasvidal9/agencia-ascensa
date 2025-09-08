@@ -1,0 +1,356 @@
+// Variables para un mantenimiento más fácil
+$blanco: #ffffff;
+$azul: #354E90;
+$gris-claro: #f8f8f8;
+$gris-borde: #e0e0e0;
+$gris-oscuro-texto: #333;
+$gris-medio-texto: #777;
+
+/* MIXIN-desktop */
+    @mixin flex($direction, $justify, $align) {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $justify;
+        align-items: $align;
+    }
+    @mixin tamaño($width, $height) {
+        width: $width;
+        height: $height;
+    }
+    @mixin padding($top, $right, $bottom, $left) {
+        padding: $top $right $bottom $left;
+    }
+    @mixin margin($top, $right, $bottom, $left) {
+        margin: $top $right $bottom $left;
+    }
+
+
+// Estilos globales y base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Montserrat', 'Ubuntu', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: $gris-claro;
+    color: $gris-oscuro-texto;
+}
+
+/* NAV */
+.menu {
+    position: fixed;
+    width: 100%;
+    background-color: $azul;
+    z-index: 1;
+}
+.titulo-nav {
+    @include flex(row,center,flex-start);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: start;
+    padding: 10px 20px;
+    border: unset;
+    border-radius: 15px;
+    color: $azul;
+    background: $blanco;
+    position: relative;
+    font-weight: 1000;
+    font-size: 80%;
+    overflow: hidden;
+}
+.container-nav{
+    padding-right: 10rem;
+}
+.menu-nav {
+    text-transform: uppercase;
+    color: $blanco;
+    margin: 0 1rem;
+    font-size: 100%;
+}
+// Variables para un mantenimiento más fácil
+$blanco: #ffffff;
+$azul: #354E90;
+$gris-claro: #f8f8f8;
+$gris-borde: #e0e0e0;
+$gris-oscuro-texto: #333;
+$gris-medio-texto: #777;
+
+
+/* DESKTOP */
+@media screen and (min-width: 768px) {
+/* MIXIN-desktop */
+    @mixin flex($direction, $justify, $align) {
+        display: flex;
+        flex-direction: $direction;
+        justify-content: $justify;
+        align-items: $align;
+    }
+    @mixin tamaño($width, $height) {
+        width: $width;
+        height: $height;
+    }
+    @mixin padding($top, $right, $bottom, $left) {
+        padding: $top $right $bottom $left;
+    }
+    @mixin margin($top, $right, $bottom, $left) {
+        margin: $top $right $bottom $left;
+    }
+
+/* SECCIONES PRINCIPALES */
+    .contenedor-1 {
+    @include flex(column,center,center);
+    @include tamaño(100%,100vh);
+    background-color: $azul;
+    font-size: 100%;
+    text-transform: uppercase;
+        .titulo-1 {
+        color: $blanco;
+        font-size: 200%;
+        }
+        .parrafo-1 {
+        color: $blanco;
+        font-size: 100%;
+        text-transform: uppercase;
+        }
+        .boton-1 {
+        padding: 15px 25px;
+        border: unset;
+        border-radius: 15px;
+        color: $gris-oscuro-texto;
+        z-index: 1;
+        background: $blanco;
+        position: relative;
+        font-weight: 1000;
+        font-size: 80%;
+        box-shadow: 4px 8px 19px -3px $azul;
+        transition: all 250ms;
+        overflow: hidden;
+            &::before {
+            content: "";
+            @include tamaño(0,100%);
+            background-color: $azul;
+            box-shadow: 4px 8px 19px -3px $azul;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px;
+            z-index: -1;
+            transition: all 250ms;
+            }
+            &:hover {
+            color: $blanco;
+            }
+            &:hover::before {
+            width: 100%;
+            }
+        }
+    }
+
+/* SECCION DE COMUNIDAD (LOGOS) */
+    #casos-de-exito {
+    scroll-margin-top: 50px;
+    }
+    .contenedor-2 {
+    @include flex(column,flex-start,center);
+    width: 100%;
+    padding-top: 1rem;
+        .titulo-2 {
+        color: $azul;
+        font-size: 2rem;
+        font-weight: bold
+        }
+        .parrafo-2{
+        color: $azul;
+        }
+        @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-200px * 6)); }
+        }
+        .slider-2 {
+        @include tamaño(960px,200px);
+        background: $blanco;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+        margin: 1rem;
+        overflow: hidden;
+        position: relative;
+            .slide-track-2 {
+            display: flex;
+            animation: scroll 40s linear infinite;
+            width: calc(250px * 12);
+                .slide-2 {
+                @include flex(row,center,center);
+                @include tamaño(200px,200px);
+                }
+                .imagenes-2 {
+                @include tamaño(100%,100%);
+                object-fit: contain;
+                }
+            }
+        }
+    }
+
+
+/* SECCION DE TESTIMONIOS (CARRUSEL) */
+    .testimonials-carousel-section {
+    @include flex(column,center,center);
+    @include tamaño(100%,100%);
+    @include padding(4rem,0,0,0);
+    background-color: $gris-claro;
+    overflow: hidden;
+        #testimonialCarousel {
+        width: 100%;
+        max-width: 1200px;
+        }
+        .card-group-wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+        }
+        .card {
+        @include flex(column,space-between,center);
+        @include tamaño(350px,400px);
+        background-color: $blanco;
+        border: 1px solid $gris-borde;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        padding: 30px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+            &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            }
+            .quote {
+            color: $gris-oscuro-texto;
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            }
+            .user-info {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+                .imagenes-testimonios {
+                @include tamaño(140px,140px);
+                border-radius: 50%;
+                margin-right: 5px;
+                object-fit: cover;
+                }
+                .name {
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin: 0;
+                color: $gris-oscuro-texto;
+                }
+                .title {
+                font-size: 0.9rem;
+                color: $gris-medio-texto;
+                margin: 0;
+                }
+            }
+        }
+    }
+    
+    /* SECCION DE SERVICIOS (CARDS) */
+    #servicios {
+    scroll-margin-top: 50px;
+        .contenedor-3 {
+        @include flex(column,center,center);
+        margin-bottom: 40px;
+            .titulo-3 {
+            color: $azul;
+            padding-top: 3rem;
+            font-size: 2rem;
+            font-weight: bold;
+            }
+        }
+        .contenedor-card-servicios {
+        @include flex(row,center,flex-start);
+        @include tamaño(100%,100vh);
+        padding-top: 8rem;
+        }
+        .card-container {
+        flex: 0 0 300px;
+        max-width: 300px;
+        margin: 30px;
+        }
+        .card-servicios {
+        @include tamaño(100%,400px);
+        font-weight: bold;
+        position: relative;
+            .card {
+            @include flex(column,center,center);
+            @include tamaño(100%,100%);
+            color: $azul;
+            padding: 30px;
+            border: 2px solid $azul;
+            background: $blanco;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.25s ease;
+                &:hover {
+                transform: translate(-30px, -30px);
+                border-color: $azul;
+                    .card--display {
+                    @include padding(10px,0,10px,0);
+                    display: none;
+                    }
+                    .card--hover {
+                    @include flex(column,center,center);
+                    }
+                }
+                .card--display {
+                @include flex(column,center,center);
+                    .titulo-servicio-card { 
+                    @include margin(10px,0,0,0)
+                    }
+                }
+                .card--hover {
+                display: none;
+                    .titulo-servicio-card { 
+                    margin: 20px 0; 
+                    }
+                    .parrafo-servicio-card {
+                    font-weight: normal;
+                    line-height: 1.5;
+                    padding: 0 10px;
+                        &.link {
+                        margin: 20px 0 0;
+                        font-weight: bold;
+                        color: $azul;
+                        }
+                    }
+                }
+            }
+            .card--border {
+            @include tamaño(100%,100%);
+                position: absolute;
+                left: 0;
+                top: 0;
+                border: 2px dashed $azul;
+                z-index: -1;
+            }
+            &.card--dark {
+                .card {
+                    color: $azul;
+                    background-color: $blanco;
+                    border-color: $azul;
+                    .card--hover .link {
+                    color: $azul;
+                    }
+                }
+                .card--border {
+                    border-color: $azul;
+                }
+            }
+        }
+    }
+}
+
+
+
