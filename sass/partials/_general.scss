@@ -1,21 +1,13 @@
-// Variables para un mantenimiento más fácil
-/* $blanco: #ffffff;
+@use "mixins" as*;
+$blanco: #ffffff;
 $azul: #354E90;
 $gris-claro: #f8f8f8;
 $gris-borde: #e0e0e0;
 $gris-oscuro-texto: #333;
-$gris-medio-texto: #777; */
+$gris-medio-texto: #777;
 
-/* MIXIN-desktop */
-/*     @mixin flex($direction, $justify, $align) {
-        display: flex;
-        flex-direction: $direction;
-        justify-content: $justify;
-        align-items: $align;
-    }
- */
-// Estilos globales y base
-/* * {
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,9 +19,9 @@ body {
     background-color: $gris-claro;
     color: $gris-oscuro-texto;
 }
- */
+
 /* NAV */
-/* .menu {
+.menu {
     position: fixed;
     width: 100%;
     background-color: $azul;
@@ -45,7 +37,6 @@ body {
     border: unset;
     border-radius: 15px;
     color: $azul;
-
     background: $blanco;
     position: relative;
     font-weight: 1000;
@@ -53,12 +44,11 @@ body {
     overflow: hidden;
 }
 .container-nav{
-    padding-right: 8rem;
+    padding-right: 10rem;
 }
 .menu-nav {
     text-transform: uppercase;
     color: $blanco;
     margin: 0 1rem;
-    font-size: 80%;
-} */
-
+    font-size: 100%;
+}

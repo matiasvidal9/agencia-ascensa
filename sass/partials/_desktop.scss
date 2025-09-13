@@ -1,104 +1,8 @@
-// Variables para un mantenimiento más fácil
-$blanco: #ffffff;
-$azul: #354E90;
-$gris-claro: #f8f8f8;
-$gris-borde: #e0e0e0;
-$gris-oscuro-texto: #333;
-$gris-medio-texto: #777;
-
-/* MIXIN-desktop */
-    @mixin flex($direction, $justify, $align) {
-        display: flex;
-        flex-direction: $direction;
-        justify-content: $justify;
-        align-items: $align;
-    }
-    @mixin tamaño($width, $height) {
-        width: $width;
-        height: $height;
-    }
-    @mixin padding($top, $right, $bottom, $left) {
-        padding: $top $right $bottom $left;
-    }
-    @mixin margin($top, $right, $bottom, $left) {
-        margin: $top $right $bottom $left;
-    }
-
-
-// Estilos globales y base
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: 'Montserrat', 'Ubuntu', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: $gris-claro;
-    color: $gris-oscuro-texto;
-}
-
-/* NAV */
-.menu {
-    position: fixed;
-    width: 100%;
-    background-color: $azul;
-    z-index: 1;
-}
-.titulo-nav {
-    @include flex(row,center,flex-start);
-    font-size: 1rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-align: start;
-    padding: 10px 20px;
-    border: unset;
-    border-radius: 15px;
-    color: $azul;
-    background: $blanco;
-    position: relative;
-    font-weight: 1000;
-    font-size: 80%;
-    overflow: hidden;
-}
-.container-nav{
-    padding-right: 10rem;
-}
-.menu-nav {
-    text-transform: uppercase;
-    color: $blanco;
-    margin: 0 1rem;
-    font-size: 100%;
-}
-// Variables para un mantenimiento más fácil
-$blanco: #ffffff;
-$azul: #354E90;
-$gris-claro: #f8f8f8;
-$gris-borde: #e0e0e0;
-$gris-oscuro-texto: #333;
-$gris-medio-texto: #777;
-
+@use "general" as*;
+@use "mixins" as*;
 
 /* DESKTOP */
 @media screen and (min-width: 768px) {
-/* MIXIN-desktop */
-    @mixin flex($direction, $justify, $align) {
-        display: flex;
-        flex-direction: $direction;
-        justify-content: $justify;
-        align-items: $align;
-    }
-    @mixin tamaño($width, $height) {
-        width: $width;
-        height: $height;
-    }
-    @mixin padding($top, $right, $bottom, $left) {
-        padding: $top $right $bottom $left;
-    }
-    @mixin margin($top, $right, $bottom, $left) {
-        margin: $top $right $bottom $left;
-    }
 
 /* SECCIONES PRINCIPALES */
     .contenedor-1 {
@@ -348,6 +252,71 @@ $gris-medio-texto: #777;
                     border-color: $azul;
                 }
             }
+        }
+    }
+
+    /* CONTACTO */
+    #contacto {
+    scroll-margin-top: 50px;
+    }
+
+    .titulo-contacto {
+    @include flex(row, center, center);
+    color: $azul;
+    font-size: 2rem;
+    font-weight: bold;
+    }
+
+    .contacto-grid-container {
+    @include padding(2rem, 2rem, 2rem, 2rem);
+    @include tamaño(100%, auto);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; 
+        .contacto-info {
+        @include flex(column, flex-start, flex-start);
+            .parrafo-contacto{
+            color: $azul;
+            font-size: 2rem;
+            }
+        }
+        .contacto-form {
+        @include flex(column, center, flex-end);
+            .formulario {
+            @include tamaño(100%, auto);
+            @include flex(column, flex-start, stretch);
+    
+                .formulario-nombre,
+                .formulario-email,
+                .formulario-mensaje {
+                color: $azul;
+                font-weight: bold;
+                }
+
+                .caja {
+                @include tamaño(100%, auto);
+                @include padding(0.5rem, 0.5rem, 0.5rem, 0.5rem);
+                @include margin(1rem, 0, 0, 0);
+                color: $azul;
+                border: 1px solid $gris-borde;
+                border-radius: 5px;
+                }
+            }
+        }
+    }
+
+    /* FOOTER */
+    .footer{
+    @include flex(row, space-between, center);
+    @include padding(5rem, 2rem, 5rem, 2rem);
+    background-color: $azul;
+        .izquierda{
+        color: $blanco;
+        font-size: 1rem;
+        }
+        .derecha{
+        color: $blanco;
+        font-size: 1rem;
         }
     }
 }

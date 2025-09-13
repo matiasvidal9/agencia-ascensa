@@ -1,4 +1,3 @@
-/* MIXIN-desktop */
 * {
   margin: 0;
   padding: 0;
@@ -54,7 +53,6 @@ body {
 
 /* DESKTOP */
 @media screen and (min-width: 768px) {
-  /* MIXIN-desktop */
   /* SECCIONES PRINCIPALES */
   .contenedor-1 {
     display: flex;
@@ -344,6 +342,83 @@ body {
   }
   #servicios .card-servicios.card--dark .card--border {
     border-color: #354E90;
+  }
+  /* CONTACTO */
+  #contacto {
+    scroll-margin-top: 50px;
+  }
+  .titulo-contacto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #354E90;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  .contacto-grid-container {
+    padding: 2rem 2rem 2rem 2rem;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .contacto-grid-container .contacto-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .contacto-grid-container .contacto-info .parrafo-contacto {
+    color: #354E90;
+    font-size: 2rem;
+  }
+  .contacto-grid-container .contacto-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .contacto-grid-container .contacto-form .formulario {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .contacto-grid-container .contacto-form .formulario .formulario-nombre,
+  .contacto-grid-container .contacto-form .formulario .formulario-email,
+  .contacto-grid-container .contacto-form .formulario .formulario-mensaje {
+    color: #354E90;
+    font-weight: bold;
+  }
+  .contacto-grid-container .contacto-form .formulario .caja {
+    width: 100%;
+    height: auto;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    margin: 1rem 0 0 0;
+    color: #354E90;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+  }
+  /* FOOTER */
+  .footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5rem 2rem 5rem 2rem;
+    background-color: #354E90;
+  }
+  .footer .izquierda {
+    color: #ffffff;
+    font-size: 1rem;
+  }
+  .footer .derecha {
+    color: #ffffff;
+    font-size: 1rem;
   }
 }
 
