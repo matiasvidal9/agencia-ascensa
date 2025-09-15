@@ -102,7 +102,7 @@
     .testimonials-carousel-section {
     @include flex(column,center,center);
     @include tamaño(100%,100%);
-    @include padding(4rem,0,0,0);
+    @include padding(4rem,0,2rem,0);
     background-color: $gris-claro;
     overflow: hidden;
         #testimonialCarousel {
